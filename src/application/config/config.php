@@ -28,7 +28,7 @@ $config['protocol'] = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = $config['protocol'] . 'localhost:' . getenv('APP_PORT') . '/';
 
 /*
 |--------------------------------------------------------------------------
