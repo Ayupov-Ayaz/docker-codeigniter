@@ -75,10 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	// docker-compose.yml links alias
+	'hostname' => 'mysql',
+	'username' => getenv('MYSQL_USER'),
+	'password' => getenv('MYSQL_PASSPORT'),
+	'database' => getenv('MYSQL_DATABASE'),
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
