@@ -1,5 +1,8 @@
 version: '3'
 
+volumes:
+  mysql_db:
+
 services:
   app:
     build:
@@ -7,9 +10,24 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./src/:/var/www/html/
+      - ./logst/apache/:/var/logs/apache2/
     ports:
       - ${APP_PORT}:80
     env_file:
       - .env
+    links:
+      - mysql:mysql
     restart: always
     container_name: codeigniter_app
+
+  mysql:
+    image: mysql
+    ports:
+      - ${MYSQL_PORT}:3306
+    volumes:
+      - mysql_db:/var/lib/mysql
+      - ./logs/mysql/:/var/logs/mysql/
+    env_file:
+      - .env
+    restart: always
+    container_name: mysql_codeigniter
