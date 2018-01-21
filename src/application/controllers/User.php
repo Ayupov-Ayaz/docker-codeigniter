@@ -8,10 +8,19 @@ class User extends CI_Controller {
     public function index()
     {
         $users = $this->get_all_users();
-        $this->load->view('all_users_view',$users);
+        $this->load->view('users_view',$users);
     }
-    
+
     public function get_all_users(){
         return $this->users;
+    }
+
+    public function get_user_by_id(int $id){
+
+        $users = $this->get_all_users();
+
+        $user['user'] = $users['users'][$id];
+
+        $this->load->view('users_view', $user);
     }
 }

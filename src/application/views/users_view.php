@@ -16,6 +16,8 @@
                 <li><?=$user;?></li>
             <?php endforeach; ?>
         </ul>
+        <?elseif(!empty($user)):?>
+            <h3>Hello, <?=$user?></h3>
     <?php endif;?>
 </body>
 </html>
