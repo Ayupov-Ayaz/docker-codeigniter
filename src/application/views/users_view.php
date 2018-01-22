@@ -13,11 +13,15 @@
     <?php if(!empty($users)):?>
         <ul>
             <?php foreach ($users as $user):?>
-                <li><?=$user;?></li>
+                <li><?=$user['name'];?></li>
             <?php endforeach; ?>
         </ul>
         <?elseif(!empty($user)):?>
-            <h3>Hello, <?=$user?></h3>
+            <?php foreach($user as $current):?>
+                <p>Hello, <?=$current['name'];?></p>
+            <?php endforeach;?>
+    <?else:?>
+        <p>Ничего нет</p>
     <?php endif;?>
 </body>
 </html>
