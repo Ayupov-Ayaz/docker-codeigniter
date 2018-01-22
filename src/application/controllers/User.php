@@ -19,7 +19,7 @@ class User extends CI_Controller {
 
         $users = $this->get_all_users();
 
-        $user['user'] = $users['users'][$id];
+        $user['UserController'] = $users['users'][$id];
 
         $this->load->view('users_view', $user);
     }
