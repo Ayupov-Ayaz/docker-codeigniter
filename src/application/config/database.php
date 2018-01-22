@@ -78,7 +78,7 @@ $db['default'] = array(
 	// docker-compose.yml links alias
 	'hostname' => 'mysql',
 	'username' => getenv('MYSQL_USER'),
-	'password' => getenv('MYSQL_PASSPORT'),
+	'password' => getenv('MYSQL_PASSWORD'),
 	'database' => getenv('MYSQL_DATABASE'),
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
